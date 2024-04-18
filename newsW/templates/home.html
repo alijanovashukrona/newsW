@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block title %}Bosh sahifa{% endblock title %}
+
 {% block content %}
-    {% if user.is_authenticated %}
-        {{ user.username }}!
-        <p><a href="{% url 'logout' %}">Chiqib keetish</a></p>
-    {% else %}
-        <p>Saytga kirmagansiz</p>
-        <a href="{% url 'login' %}">Kirish</a>
-        <a href="{% url 'signup' %}">Royhatdan otish</a>
-    {% endif %}
+    <br/>
+    <div class="jumbotron">
+        <h1 class="display-4">Assalom alaykum!</h1>
+        <p class="lead">Shukronaning shaxsiy blogiga xush kelibsiz.</p>
+        <hr class="my-4">
+        <p>Bu yerda siz dunyo yangiliklardan xabardor bo'lib turasiz.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}" role="button">Postlarni ko'rish</a>
+        </p>
+    </div>
 {% endblock content %}
